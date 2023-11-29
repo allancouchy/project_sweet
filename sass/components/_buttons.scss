@@ -1,0 +1,16 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend %fw-300;
+    color: $color-white;
+    text-decoration: none;
+    background-color: $color-primary;
+    border-radius: 30px;
+
+    &--big {
+        width: 170px;
+        height: 55px;
+        transition: all 200ms ease-in-out;
+    }
+}

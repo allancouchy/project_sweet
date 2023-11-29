@@ -1,0 +1,68 @@
+.contact {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+
+    &__item {
+        width: 45%;
+        @extend %column;
+
+        &__meta {
+            width: fit-content;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        &__text {
+            width: 70%;
+            font-size: 24px;
+            margin: 0;
+        }
+    }
+
+    &__form {
+        width: 45%;
+        height: fit-content;
+        @extend %column;
+        background-color: $color-lightblue;
+        padding: 64px;
+
+        &__input {
+            @extend %column;
+            color: $color-primary;
+            margin-bottom: 32px;
+
+            &__label {
+                display: flex;
+                font-size: 12px;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+
+                >i {
+                    display: flex;
+                    align-items: flex-start;
+                    font-size: 8px;
+                    margin-left: 5px;
+                }
+            }
+
+            &__element {
+                height: 55px;
+                font-size: 16px;
+                padding: 16px;
+            }
+
+            &__textarea {
+                height: 160px;
+                font-size: 16px;
+                padding: 16px;
+            }
+        }
+
+        &__submit {
+            font-size: 16px;
+            border: none;
+        }
+    }
+}

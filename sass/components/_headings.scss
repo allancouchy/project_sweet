@@ -1,0 +1,18 @@
+.hdg {
+    margin: 0;
+
+    &--large {
+        font-size: 72px;
+    }
+
+    &--medium {
+        font-size: 48px;
+        @extend %fw-300;
+        margin: 60px 0;
+    }
+
+    &--small {
+        font-size: 24px;
+        @extend %fw-300;
+    }
+}
