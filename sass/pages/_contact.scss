@@ -72,11 +72,6 @@
         &__item {
             width: 100%;
 
-            &__hdg {
-                font-size: 48px;
-                font-weight: 300;
-            }
-
             &__text {
                 width: 80%;
             }
@@ -85,6 +80,23 @@
         &__form {
             width: 100%;
             margin-top: 60px;
+        }
+    }
+
+    @include mob {
+        flex-direction: column;
+
+        &__item {
+            width: 100%;
+
+            &__text {
+                width: 100%;
+                font-size: 16px;
+            }
+        }
+
+        &__form {
+            padding: 30px;
         }
     }
 }

@@ -3,16 +3,35 @@
 
     &--large {
         font-size: 72px;
+
+        @include tab {
+            font-size: 48px;
+        }
+
+        @include mob {
+            font-size: 30px;
+            font-weight: 500;
+        }
     }
 
     &--medium {
         font-size: 48px;
         @extend %fw-300;
         margin: 60px 0;
+
+        @include mob {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 30px 0;
+        }
     }
 
     &--small {
         font-size: 24px;
         @extend %fw-300;
+
+        @include mob {
+            font-size: 18px;
+        }
     }
 }

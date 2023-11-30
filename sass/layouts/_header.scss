@@ -70,5 +70,15 @@
                 }
             }
         }
+
+        @include mob {
+            &__logo {
+                font-size: 20px;
+            }
+
+            &__nav {
+                display: none
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@
 
 @mixin col($color) {
   @if (lightness($color) > 70) {
-    color: darken($color, 50);
+    color: darken($color, 70);
   } @else {
     color: lighten($color, 30);
   }
@@ -26,6 +26,12 @@
 
 @mixin tab {
   @media screen and (max-width: map-get($breakpoints, tab)) {
+    @content;
+  }
+}
+
+@mixin des {
+  @media screen and (min-width: map-get($breakpoints, des)) {
     @content;
   }
 }
