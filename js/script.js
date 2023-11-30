@@ -115,7 +115,7 @@ const listOfValuesAnimation = () => {
 
     // check the screen size
     // if the user is using a desk
-    if (innerHeight > 992) {
+    if (innerWidth > 992) {
 
       // user scroll down
       // the first content list move to the left
