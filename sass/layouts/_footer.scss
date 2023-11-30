@@ -41,7 +41,11 @@
                 transition: all 200ms ease-in-out;
 
                 &:first-child {
-                    margin-right: 10px;
+                    margin-right: 20px;
+
+                    @include mob {
+                        margin-right: 25px;
+                    }
                 }
             }
         }

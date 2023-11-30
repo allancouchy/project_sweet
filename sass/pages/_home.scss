@@ -466,14 +466,10 @@
     &::after {
         content: "";
         opacity: 60%;
-        width: 100%;
+        width: 90%;
         height: 570px;
         background-color: $color-white;
         position: absolute;
-
-        @include mob {
-            height: 100%;
-        }
     }
 
     >* {
