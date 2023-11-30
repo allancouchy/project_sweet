@@ -65,4 +65,26 @@
             border: none;
         }
     }
+
+    @include tab {
+        flex-direction: column;
+
+        &__item {
+            width: 100%;
+
+            &__hdg {
+                font-size: 48px;
+                font-weight: 300;
+            }
+
+            &__text {
+                width: 80%;
+            }
+        }
+
+        &__form {
+            width: 100%;
+            margin-top: 60px;
+        }
+    }
 }

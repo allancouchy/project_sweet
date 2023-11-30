@@ -19,6 +19,20 @@
             @include bac($color-primary);
         }
     }
+
+    @include tab {
+        width: 90%;
+
+        &__hdg {
+            font-size: 48px;
+            font-weight: 300;
+        }
+
+        &__text {
+            width: 100%;
+            font-size: 20px;
+        }
+    }
 }
 
 // mission
@@ -34,6 +48,11 @@
         grid-gap: 20px;
         padding: 60px 0;
         margin: 0;
+
+        @include tab {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 300px);
+        }
 
         &__item {
             width: 100%;
@@ -211,6 +230,23 @@
                 }
             }
         }
+
+        @include tab {
+            grid-template-columns: 1fr;
+
+            &__item {
+                &__link {
+                    &::after {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+
+                    &__img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -245,6 +281,11 @@
             padding: 0;
             margin: 0;
             transition: all 1000ms ease-in-out;
+
+            @include tab {
+                width: 100%;
+                grid-template-rows: 300px;
+            }
 
             &:last-child {
                 justify-self: flex-end;
@@ -306,6 +347,16 @@
             text-align: center;
         }
 
+        @include tab {
+            width: 100%;
+            align-items: flex-start;
+
+            &__hdg {
+                width: 100%;
+                text-align: start;
+            }
+        }
+
         &__content {
             display: flex;
             justify-content: space-between;
@@ -355,6 +406,8 @@
     }
 
     &__hdg {
+        width: 80%;
+        text-align: center;
         margin: 0 0 30px 0;
     }
 
@@ -381,7 +434,11 @@
     }
 
     &__hdg {
-        width: 40%;
+        width: 50%;
+
+        @include tab {
+            width: 80%;
+        }
     }
 
     &__logos {
@@ -430,7 +487,7 @@
 
 .contact-info {
     width: 100%;
-    height: 570px;
+    min-height: 570px;
     display: flex;
     justify-content: space-between;
     background-color: $color-lightblue;
@@ -483,6 +540,23 @@
             &:hover {
                 @include bac($color-primary);
             }
+        }
+    }
+
+    @include tab {
+        flex-direction: column;
+
+        &__aside {
+            width: 100%;
+            margin: 0 0 60px 0;
+
+            &__img {
+                width: 100%;
+            }
+        }
+
+        &__item {
+            width: 100%;
         }
     }
 }

@@ -112,26 +112,31 @@ const listOfValuesAnimation = () => {
   const valueContentLists = document.getElementsByClassName("values__content__list")
 
   window.addEventListener('scroll', () => {
-    // user scroll down
-    // the first content list move to the left
-    // it return to its init position
-    if (valueContentLists[0]) {
-      if (scrollY > 1750) {
-        valueContentLists[0].style.transform = "translateX(0)";
-      } else {
-        valueContentLists[0].style.transform = "translateX(25%)";
 
-      }
-    };
+    // check the screen size
+    // if the user is using a desk
+    if (innerHeight > 992) {
 
-    // the second one move to the right
-    if (valueContentLists[1]) {
-      if (scrollY > 1750) {
-        valueContentLists[1].style.transform = "translateX(0)";
-      } else {
-        valueContentLists[1].style.transform = "translateX(-25%)";
-      }
-    };
+      // user scroll down
+      // the first content list move to the left
+      // it return to its init position
+      if (valueContentLists[0]) {
+        if (scrollY > 1750) {
+          valueContentLists[0].style.transform = "translateX(0)";
+        } else {
+          valueContentLists[0].style.transform = "translateX(25%)";
+        }
+      };
+
+      // the second one move to the right
+      if (valueContentLists[1]) {
+        if (scrollY > 1750) {
+          valueContentLists[1].style.transform = "translateX(0)";
+        } else {
+          valueContentLists[1].style.transform = "translateX(-25%)";
+        }
+      };
+    }
   })
 }
 listOfValuesAnimation()
