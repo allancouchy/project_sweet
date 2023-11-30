@@ -20,17 +20,17 @@ addHeaderShadow();
  */
 
 const workAppearance = () => {
-  const workContainer = document.querySelector(".work")
+  const workContainer = document.querySelector(".work");
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (scrollY > 800) {
-      workContainer.style.transform = "translateY(0)"
+      workContainer.style.transform = "translateY(0)";
     } else {
-      workContainer.style.transform = "translateY(25%)"
+      workContainer.style.transform = "translateY(25%)";
     }
-  })
-}
-workAppearance()
+  });
+};
+workAppearance();
 
 /**
  * create work items:
@@ -67,7 +67,7 @@ const createWorkItem = () => {
     workItem.appendChild(workItemInfo);
 
     // create title
-    const workItemHdg = document.createElement("h2");
+    const workItemHdg = document.createElement("h3");
     workItemHdg.classList.add("work__content__item__desc__hdg");
     workItemHdg.textContent = data.title;
     workItemInfo.appendChild(workItemHdg);
@@ -82,9 +82,9 @@ const createWorkItem = () => {
     workItemInfo.appendChild(workItemGithubLink);
 
     // create icon
-    const workItemIcon = document.createElement("i")
-    workItemIcon.classList.add("fa-solid", "fa-code")
-    workItemGithubLink.appendChild(workItemIcon)
+    const workItemIcon = document.createElement("i");
+    workItemIcon.classList.add("fa-solid", "fa-code");
+    workItemGithubLink.appendChild(workItemIcon);
   }
 };
 createWorkItem();
@@ -94,12 +94,14 @@ createWorkItem();
  */
 
 const duplicateCodeIcon = () => {
-  const links = document.getElementsByClassName("work__content__item__desc__btn");
+  const links = document.getElementsByClassName(
+    "work__content__item__desc__btn"
+  );
 
   for (const i of links) {
-    const icon = document.querySelector(".fa-code")
+    const icon = document.querySelector(".fa-code");
     const copy = icon.cloneNode(true);
-    i.appendChild(copy)
+    i.appendChild(copy);
   }
 };
 duplicateCodeIcon();
@@ -109,14 +111,14 @@ duplicateCodeIcon();
  */
 
 const listOfValuesAnimation = () => {
-  const valueContentLists = document.getElementsByClassName("values__content__list")
+  const valueContentLists = document.getElementsByClassName(
+    "values__content__list"
+  );
 
-  window.addEventListener('scroll', () => {
-
+  window.addEventListener("scroll", () => {
     // check the screen size
     // if the user is using a desk
     if (innerWidth > 992) {
-
       // user scroll down
       // the first content list move to the left
       // it return to its init position
@@ -126,7 +128,7 @@ const listOfValuesAnimation = () => {
         } else {
           valueContentLists[0].style.transform = "translateX(25%)";
         }
-      };
+      }
 
       // the second one move to the right
       if (valueContentLists[1]) {
@@ -135,11 +137,37 @@ const listOfValuesAnimation = () => {
         } else {
           valueContentLists[1].style.transform = "translateX(-25%)";
         }
-      };
+      }
+    } else {
+      for (const list of valueContentLists) {
+        list.style.transform = "none";
+      }
     }
-  })
-}
-listOfValuesAnimation()
+  });
+};
+listOfValuesAnimation();
+
+/**
+ * display the rest of the article on click
+ */
+
+const displayAllArticle = () => {
+  const readMoreBtn = document.querySelector(".article__btn");
+  const articleTexts = document.getElementsByClassName(
+    "article__element__content__text"
+  );
+
+  readMoreBtn.addEventListener("click", () => {
+    if (readMoreBtn.textContent === "Lire la suite") {
+      articleTexts[1].style.display = "flex";
+      readMoreBtn.textContent = "Replier l'article";
+    } else {
+      articleTexts[1].style.display = "none";
+      readMoreBtn.textContent = "Lire la suite";
+    }
+  });
+};
+displayAllArticle();
 
 /**
  * duplication logos slide
