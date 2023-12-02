@@ -32,12 +32,12 @@ const sendMessage = () => {
 
                 // regex config
                 const REGEX_MAIL = /^[a-zA-Z0-9_.-]+@+[a-zA-Z0-9]+\.+[a-z]{2,4}$/
-                const REGEX_TEXT = /^[\w0-9][\w0-9\àéèëïôûù .;:()[\]\|\/-_]+$/;
+                const REGEX_TEXT = /^[\w0-9][\w0-9\àéèëïôûù '.,;:()[\]\|\/-_]+$/;
                 let isValid = true;
 
                 // verify the input validity to send the user message
                 if (!REGEX_TEXT.test(name)) {
-                    alert("Un caractère non autorisé a été détectée lors de la saisie de votre nom et prénom. À savoir, seul les caractères suivants sont autorisés : .;:()[]/|-_");
+                    alert("Un caractère non autorisé a été détectée lors de la saisie de votre nom et prénom. À savoir, seul les caractères suivants sont autorisés : '.,;:()[]|/-_");
                     return isValid = false;
                 }
 
@@ -47,12 +47,12 @@ const sendMessage = () => {
                 }
 
                 if (!REGEX_TEXT.test(subject)) {
-                    alert("Un caractère non autorisé a été détectée lors de la saisie de l'objet de votre demande. À savoir, seul les caractères suivants sont autorisés : .;:()[]/|-_");
+                    alert("Un caractère non autorisé a été détectée lors de la saisie de l'objet de votre demande. À savoir, seul les caractères suivants sont autorisés : '.,;:()[]|/-_");
                     return isValid = false;
                 }
 
                 if (!REGEX_TEXT.test(message)) {
-                    alert("Attention, votre message comporte moins de 10 caractères et/ou un caractère spécial non autorisé. À savoir, seul les caractères spéciaux suivants sont autorisés : .;:()[]/|-_");
+                    alert("Attention, votre message comporte moins de 10 caractères et/ou un caractère spécial non autorisé. À savoir, seul les caractères spéciaux suivants sont autorisés : '.,;:()[]|/-_");
                     return isValid = false;
                 }
 
