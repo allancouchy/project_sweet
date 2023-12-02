@@ -32,7 +32,7 @@ const sendMessage = () => {
 
                 // regex config
                 const REGEX_MAIL = /^[a-zA-Z0-9_.-]+@+[a-zA-Z0-9]+\.+[a-z]{2,4}$/
-                const REGEX_TEXT = /^[\w0-9][\w0-9\àéèëïôûù '.,;:()[\]\|\/-_]+$/;
+                const REGEX_TEXT = /^[\w0-9][\w0-9\àéèëïôûù '.,;:?!()[\]\|\/\\-_\n]+$/;
                 let isValid = true;
 
                 // verify the input validity to send the user message
